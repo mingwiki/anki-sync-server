@@ -16,7 +16,7 @@ $   mkdir /data/anki
 > All your anki data will stored in the local path(/data/anki), don't worry the container will delete itself when it stops.
 
 ``` shell
-$   curl -O https://raw.githubusercontent.com/mingwiki/anki-sync-server/main/anki.sh
+$   curl -O https://github.com/mingwiki/anki-sync-server/releases/download/v1/anki.sh
 $   sh anki.sh
 ```
 
