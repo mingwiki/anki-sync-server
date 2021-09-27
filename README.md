@@ -40,8 +40,8 @@ $   ./ankisyncctl.py passwd <username>  # change password of a user
 > Use my site "anki.naizi.fun" as an example.
 
 ``` shell
-apt/yum/brew install certbot
-certbot certonly --standalone -d anki.naizi.fun
+$   apt/yum/brew install certbot
+$   certbot certonly --standalone -d anki.naizi.fun
 ```
 
 > Certs will be stored in /etc/letsencrypt/archive, manually copy to nginx path.
