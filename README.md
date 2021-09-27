@@ -4,30 +4,35 @@
 
 ### official repo from ankicommunity cannot work with python3, and the tutoral is too complex.
 
-## 2. User data and configuration
+## 2. Configuration
 
-### All user data is stored in ./data folder. The config file is "ankisyncd.conf"
+### The config file is "ankisyncd.conf"
 
-## 4. Install and run with shell scripts.
+## 3. Install and run with shell scripts.
 
 `mkdir /data/anki` 
 
-### All your anki data will stored in the local path, don't worry the container will delete itself when it stops. Of course, make sure docker pre-installed already， usually apt/ yum/ brew install docker. 
+> All your anki data will stored in the local path(/data/anki), don't worry the container will delete itself when it stops. Of course, make sure "docker" pre-installed already， usually apt/ yum/ brew install docker. 
+
+`curl -O https://raw.githubusercontent.com/mingwiki/anki-sync-server/main/anki.sh`
+
 `sh anki.sh`
 
-### Keep and run this shell to start the container every time, you don't have to clone all the repo, keep this script only.
+> Run this shell to start the container every time, you don't have to clone all the repo, just keep this script only.
 
-### -d: run in background
+#### -d: run in background
 
-### -rm: delete container when stop
+#### -rm: delete container when stop
 
-### --name: container name
+#### --name: container name
 
-### -p: Map localhost port to container port
+#### -p: Map localhost port to container port
 
-### -v: Mount localhost path to container path
+#### -v: Mount localhost path to container path
 
-## 5. Build your own docker image on your needs.
+## 4. Build your own docker image on your needs.
+
+`git clone https://github.com/mingwiki/anki-sync-server.git`
 
 `cd anki-sync-server`
 
