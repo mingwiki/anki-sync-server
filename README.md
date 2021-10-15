@@ -5,13 +5,13 @@
 ``` shell
 $   apt/yum install docker  # linux用户
 $   brew install --cask docker  # mac homebrew用户
-$   mkdir /ankidata  # 用于本地存储anki数据，防止docker挂掉或者版本更新的时候数据丢失。
+$   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者版本更新的时候数据丢失。
 ```
 
 ## 2、启动或停止anki-server
 ``` shell
 $   # 启动docker，建议存为startAnki.sh,方便以后直接使用。
-$   docker run -d --rm --name anki-server -p 27701:27701 -v /ankidata:/anki/data mingwiki/anki-sync-server:v1
+$   docker run -d --rm --name anki-server -p 27701:27701 -v /data/anki:/anki/data mingwiki/anki-sync-server:v1
 $   # 停止docker，建议存为stopAnki.sh,方便以后直接使用。
 $   docker container kill anki-server       
 ```
