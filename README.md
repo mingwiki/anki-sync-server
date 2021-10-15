@@ -3,8 +3,9 @@
 ## 1、安装docker运行环境，下载anki脚本。
 
 ``` shell
-$   apt/yum/brew install docker. 
-$   curl -sOL https://github.com/mingwiki/anki-sync-server/releases/download/v1/anki.sh
+$   apt/yum install docker  ## linux用户
+$   brew install --cask docker  ## mac homebrew用户
+$   curl -OL https://github.com/mingwiki/anki-sync-server/releases/download/v1/anki.sh
 $   mkdir /data/anki
 ```
 
