@@ -57,10 +57,6 @@ $   certbot certonly --standalone -d anki.naizi.fun     #生成证书包含三�
 ### 文件名保存为，anki.conf 
 ``` nginx
 server {
-    # Allow access via HTTP
-    listen 27701;
-    listen [::]:27701;
-
     # Allow access via HTTPS
     listen 443 ssl;
     listen [::]:443 ssl;
