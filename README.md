@@ -1,20 +1,24 @@
 # anki-sync-server
 
-## 1、安装docker运行环境，下载anki脚本。
+## 1、安装docker运行环境
 
 ``` shell
-$   apt/yum install docker  ## linux用户
-$   brew install --cask docker  ## mac homebrew用户
-$   curl -OL https://github.com/mingwiki/anki-sync-server/releases/download/v1/anki.sh
-$   mkdir /data/anki
+$   apt/yum install docker  # linux用户
+$   brew install --cask docker  # mac homebrew用户
+$   mkdir /ankidata  # 用于本地存储anki数据，防止docker挂掉或者版本更新的时候数据丢失。
 ```
-
-> 这个目录(/data/anki)是用于存储anki数据的，防止docker挂掉或者版本更新的时候数据丢失。
 
 ## 2、启动或停止anki-server
 ``` shell
-$   sh anki.sh          # 启动docker
-$   docker container kill anki-server       #停止docker
+$   # 启动docker，建议存为startAnki.sh,方便以后直接使用。
+$   docker run  -d \
+            --rm \
+            --name anki-server \
+            -p 27701:27701 \
+            -v /ankidata:/anki/data \
+            mingwiki/anki-sync-server:v1
+$   # 停止docker，建议存为stopAnki.sh,方便以后直接使用。
+$   docker container kill anki-server       
 ```
 
 ## 3、进入docker管理anki用户
@@ -30,14 +34,23 @@ $   ./ankisyncctl.py passwd <username>  # 更改用户密码
 
 > 退出时输入exit即可。
 
-## 4、此时win已经可以使用，需要安装插件。
+## 4、此时win版anki已经可以使用，需要安装同步插件。
+
 ### 点击工具--插件--查看本地插件文件，自动弹出插件目录
 
-> 链接:https://pan.baidu.com/s/18D4jR3bdU8s8UkuRcLjHYA 提取码:6666 
+### 在该目录中新建文件夹ankisyncd，进入后，新建txt文件，改名为__init__.py ，用记事本打开，内容如下
 
-### 下载并解压到自动弹出的插件目录，用记事本打开修改那个py文件，服务器地址改成你自己的，最后的斜杠不要省略，重启anki即可使用。
+```python
+import os
+
+addr = "https://anki.naizi.fun/" #服务器地址，务必修改此处。
+os.environ["SYNC_ENDPOINT"] = addr + "sync/"
+os.environ["SYNC_ENDPOINT_MEDIA"] = addr + "msync/"
+```
 
 > 默认是http 27701端口，所以地址格式为 http://127.0.0.1:27701/ ，需要做https的朋友继续下一步。
+
+### 重启anki后，点击同步即可使用。
 
 ## 5、安卓麻烦一点，需要用nginx做反向代理http至https。
 > 使用我的个人站点举例 "anki.naizi.fun"。
