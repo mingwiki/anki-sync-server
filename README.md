@@ -4,7 +4,7 @@
 
 ``` shell
 $   apt/yum/brew install docker. 
-$   curl -O https://github.com/mingwiki/anki-sync-server/releases/download/v1/anki.sh
+$   curl -sOL https://github.com/mingwiki/anki-sync-server/releases/download/v1/anki.sh
 $   mkdir /data/anki
 ```
 
