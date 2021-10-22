@@ -9,15 +9,28 @@ $   brew install --cask docker  # Homebrew
 $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者版本更新的时候数据丢失。
 ```
 
-## 2、启动或停止anki-sync-server
+## 2、获取、使用anki-sync-server
+
+### 国内国外源码二选一：(没有区别，哪个下载速度快用哪个)
 
 ``` shell
-$   国内国外源码二选一：
 $   git clone https://github.com/mingwiki/anki-sync-server.git  # Github 国外
 $   git clone https://gitee.com/mingwiki/anki-sync-server.git  # Gitee 国内
+```
+
+### 启动、停止server
+
+``` shell
 $   cd anki-sync-server
 $   docker-compose up -d  # 启动server，第一次启动会自动构建docker image
 $   docker-compose down  # 停止server
+```
+
+### 更新至最新版本
+``` shell
+$   docker-compose down
+$   git pull
+$   docker-compose up -d
 ```
 
 ## 3、进入docker管理anki用户
