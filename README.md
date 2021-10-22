@@ -1,19 +1,20 @@
 # anki-sync-server
 
-## 1、安装docker运行环境
+## 1、安装docker，创建数据存储目录
 
 ``` shell
-$   apt/yum install docker  # linux用户
-$   brew install --cask docker  # mac homebrew用户
+$   apt install docker docker-compose # ubuntu
+$   yum install docker docker-compose # centos
+$   brew install --cask docker  # homebrew
 $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者版本更新的时候数据丢失。
 ```
 
-## 2、启动或停止anki-server
+## 2、构建、部署、启动或停止anki-server
+
 ``` shell
-$   # 启动docker，建议存为startAnki.sh,方便以后直接使用。
-$   docker run -d --rm --name anki-server -p 27701:27701 -v /data/anki:/anki/data mingwiki/anki-sync-server:v1
-$   # 停止docker，建议存为stopAnki.sh,方便以后直接使用。
-$   docker container kill anki-server       
+$   git clone https://github.com/mingwiki/anki-sync-server.git
+$   
+$   
 ```
 
 ## 3、进入docker管理anki用户
