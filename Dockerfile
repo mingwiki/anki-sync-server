@@ -3,4 +3,4 @@ WORKDIR /app
 COPY SRC/* /app/
 RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip3 install -r requirements.txt
-CMD ["python3", "-m", "ankisyncd/"]
+CMD ["python3", "-m", "./ankisyncd"]
