@@ -3,7 +3,7 @@ services:
   app:
     restart: unless-stopped
     build: .
-    image: anki-sync-server:v2
+    image: anki-server:v2
     ports:
       - "27701:27701"
     volumes:
