@@ -1,4 +1,4 @@
-FROM python:slim-buster
+FROM python:3.9-slim-buster
 WORKDIR /app
 COPY src .
 RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
