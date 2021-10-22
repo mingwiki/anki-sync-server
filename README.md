@@ -11,11 +11,12 @@ $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者�
 
 ## 2、获取、使用anki-sync-server
 
-国内国外源码二选一：(没有区别，哪个下载速度快用哪个)
+源码三选一：(没有区别，哪个下载速度快用哪个)
 
 ``` shell
 $   git clone https://github.com/mingwiki/anki-sync-server.git  # Github 国外
 $   git clone https://gitee.com/mingwiki/anki-sync-server.git  # Gitee 国内
+$   git clone https://git.naizi.fun/mingwiki/anki-sync-server.git  #本人站点
 ```
 
 启动、停止server
