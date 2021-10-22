@@ -13,7 +13,7 @@ $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者�
 
 ``` shell
 $   git clone https://github.com/mingwiki/anki-sync-server.git
-$   
+$   docker
 $   
 ```
 
