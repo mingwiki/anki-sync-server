@@ -38,7 +38,7 @@ $   docker-compose up -d
 ## 3、进入docker管理anki用户
 
 ```shell
-$   docker container exec -it anki-container /bin/ash # 进入容器
+$   docker container exec -it anki-container bash # 进入容器
 $   ./ankisyncctl.py help   # 获取命令
 $   ./ankisyncctl.py adduser <username> # 添加用户
 $   ./ankisyncctl.py deluser <username> # 删除用户
