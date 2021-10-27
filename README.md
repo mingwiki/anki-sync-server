@@ -46,13 +46,15 @@ $   ./ankisyncctl.py lsuser             # 列出用户
 $   ./ankisyncctl.py passwd <username>  # 更改用户密码
 ```
 
+新用户名应该是邮件地址，否则在macOS下anki无法正常同步。
+
 > 退出时输入exit即可。
 
-## 4、此时win版anki已经可以使用，需要安装同步插件。
+## 4、此时桌面版Anki已经可以使用，需要安装同步插件。
 
 点击工具--插件--查看本地插件文件，自动弹出插件目录
 
-在该目录中新建文件夹ankisyncd，进入后，新建txt文件，改名为__init__.py ，用记事本打开，内容如下
+在该目录中新建任意文件夹，如ankisyncd，进入后，新建文本文件__init__.py，内容如下
 
 ```python
 import os
@@ -119,3 +121,5 @@ https://anki.naizi.fun/msync
 ```
 
 ！！！注意最后的斜杠不可省略，一个有一个没有。
+
+！！！iOS/iPad 不支持第三方同步，且需要收费。
