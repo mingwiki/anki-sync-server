@@ -3,9 +3,7 @@
 ## 1、安装docker，创建数据存储目录
 
 ``` shell
-$   apt install docker docker-compose  # Ubuntu
-$   yum install docker docker-compose  # Centos
-$   brew install --cask docker  # Homebrew
+$   apt/yum/brew install docker docker-compose
 $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者版本更新的时候数据丢失。
 ```
 
