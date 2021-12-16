@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     build: .
     container_name: anki-container
-    image: mingwiki/anki-sync-server:v1.1
+    image: mingwiki/anki-sync-server:v1.2
     ports:
       - "27701:27701"
     volumes:
