@@ -35,12 +35,12 @@ $   git pull
 ## 3、进入docker管理anki用户
 
 ```shell
-$   docker container exec -it anki bash # 进入容器
-$   ./app.py help   # 获取命令
-$   ./app.py adduser <username> # 添加用户
-$   ./app.py deluser <username> # 删除用户
-$   ./app.py lsuser             # 列出用户
-$   ./app.py passwd <username>  # 更改用户密码
+$   docker container exec -it anki-container bash # 进入容器
+$   ./ankisyncctl.py help   # 获取命令
+$   ./ankisyncctl.py adduser <username> # 添加用户
+$   ./ankisyncctl.py deluser <username> # 删除用户
+$   ./ankisyncctl.py lsuser             # 列出用户
+$   ./ankisyncctl.py passwd <username>  # 更改用户密码
 ```
 
 > 退出时输入exit即可。
