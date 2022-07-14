@@ -11,6 +11,23 @@ $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者�
 
 ## 2、获取、使用anki-sync-server
 
+### 1、直接从Docker Hub拉取
+
+``` shell
+version: "3.5"
+services:
+  app:
+    restart: unless-stopped
+    container_name: anki
+    image: mingwiki/anki-sync-server:v1.2
+    ports:
+      - "27701:27701"
+    volumes:
+      - /data/anki:/data
+```
+
+### 2、从源码构建
+
 源码二选一
 
 ``` shell
@@ -35,7 +52,7 @@ $   git pull
 ## 3、进入docker管理anki用户
 
 ```shell
-$   docker container exec -it anki-container bash # 进入容器
+$   docker container exec -it anki bash # 进入容器
 $   ./ankisyncctl.py help   # 获取命令
 $   ./ankisyncctl.py adduser <username> # 添加用户
 $   ./ankisyncctl.py deluser <username> # 删除用户
@@ -59,7 +76,7 @@ os.environ["SYNC_ENDPOINT"] = addr + "sync/"
 os.environ["SYNC_ENDPOINT_MEDIA"] = addr + "msync/"
 ```
 
-> 默认是http 27701端口，所以本地服务器地址格式为 http://127.0.0.1:27701/ ，需要做https的朋友继续下一步。并修改地址为https://127.0.0.1/
+> 默认是http 27701端口，所以本地服务器地址格式为 http://127.0.0.1:27701/ ，需要做https的朋友继续下一步。
 
 重启anki后，点击同步即可使用。
 
