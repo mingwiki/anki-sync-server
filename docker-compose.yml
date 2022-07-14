@@ -3,7 +3,7 @@ services:
   app:
     restart: unless-stopped
     build: .
-    container_name: anki-container
+    container_name: anki
     image: mingwiki/anki-sync-server:v1.2
     ports:
       - "27701:27701"
