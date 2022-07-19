@@ -16,7 +16,7 @@ $   mkdir /data/anki  # 用于本地存储anki数据，防止docker挂掉或者�
 ``` shell
 version: "3.5"
 services:
-  app:
+  anki:
     restart: unless-stopped
     container_name: anki
     image: mingwiki/anki-sync-server:v1.2
